@@ -125,11 +125,14 @@ rake db:migrate
 Routes :
 
 ```ruby
-# config/routes.rbRails.application.routes.draw do
+# config/routes.rb
+Rails.application.routes.draw do
   devise_scope :user do
     # Redirests signing out users back to sign-in
     get "users", to: "devise/sessions#new"
-  enddevise_for :users
+  end
+
+  devise_for :users
 end
 ```
 
